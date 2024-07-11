@@ -42,15 +42,19 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Web App')),
-      body: Row( // Use Row to place sidebar on the left
-        children: [
-          Sidebar(onPageSelected: _onPageSelected), // Sidebar widget
-          Expanded(
-            child: _pages[_selectedIndex], // Main content area
+        body: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
           ),
-        ],
-      ),
-    );
+          child: Row(
+            // Use Row to place sidebar on the left
+            children: [
+              Sidebar(onPageSelected: _onPageSelected), // Sidebar widget
+              Expanded(
+                child: _pages[_selectedIndex], // Main content area
+              ),
+            ],
+          ),
+        ));
   }
 }
